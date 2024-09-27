@@ -114,12 +114,12 @@ double exponential_random_variable(double mean){
     return -mean * log(random_uniform);
 }
 
-// Initilaizing the simulation
+// Initializing the simulation
 void initialize(){
     // Set the simulation time to zero
     current_simulation_time = 0.0;
 
-    // Intialize the state variables
+    // Initialize the state variables
     current_queue_length = 0;
     server_status = IDLE;
     last_event_time = 0.0;
