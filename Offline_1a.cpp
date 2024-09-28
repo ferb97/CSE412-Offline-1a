@@ -1,4 +1,6 @@
 #include<bits/stdc++.h>
+#include "lcgrand.c"
+#include "lcgrand.h"
 using namespace std;
 
 // Define maximum queue length and busy and idle status
@@ -20,11 +22,6 @@ int total_customers_arrived, current_customer_in_service;
 // Declare input and output file streams
 ifstream input_file;
 ofstream output_file1, output_file2;
-
-// Declare random number generator
-random_device rd;
-mt19937 gen(rd()); 
-uniform_real_distribution<> dist(0.0, 1.0);
 
 // Declare function prototypes
 void initialize();
@@ -110,8 +107,7 @@ int main()
 
 // Function to generate exponential random variable
 double exponential_random_variable(double mean){
-    double random_uniform = dist(gen);
-    return -mean * log(random_uniform);
+    return -mean * log(lcgrand(1));
 }
 
 // Initializing the simulation
